@@ -49,3 +49,73 @@ if tarif > 0:
 else:
     berat = 0
     subtotal = 0
+
+
+
+# ==========================================
+# BAGIAN 3: Pengecekan Diskon & Pilihan Delivery (Anggota 3)
+# ==========================================
+
+# Cek apakah subtotal bernilai lebih dari 0 (artinya pilihan jasa sebelumnya valid)
+if subtotal > 0:
+    print("-" * 40)
+    
+    # 1. Logika Pengecekan Diskon Bertingkat (Minimal)
+    if subtotal >= 150000:
+        diskon = subtotal * 0.20
+        persen_diskon = "20%"
+    elif subtotal >= 100000:
+        diskon = subtotal * 0.15
+        persen_diskon = "15%"
+    elif subtotal >= 50000:
+        diskon = subtotal * 0.10
+        persen_diskon = "10%"
+    else:
+        diskon = 0
+        persen_diskon = "0%"
+
+    # Tampilkan pesan jika mendapatkan diskon (> 0%)
+    if diskon > 0:
+        print("~" * 40)
+        print(f"🎉 HOREE! ANDA MENDAPATKAN DISKON {persen_diskon}!")
+        print(f"   Potongan Harga : Rp {diskon:,.0f}")
+        print("~" * 40)
+    else:
+        print("[i] Belanja minimal Rp 50.000 untuk mendapatkan diskon menarik!")
+
+    # Hitung total setelah diskon
+    total_setelah_diskon = subtotal - diskon
+
+    print("-" * 40)
+    print("📦 PILIHAN OPSI DELIVERY:")
+    print("   1. Diantar ke rumah (Ongkir Rp 10.000)")
+    print("   2. Ambil sendiri (Tanpa Ongkir)")
+    print("-" * 40)
+
+    # Input pilihan delivery
+    pilihan_delivery = int(input("Masukkan pilihan delivery (1/2): "))
+
+    # 2. Logika Pengecekan Delivery & Ongkir
+    if pilihan_delivery == 1:
+        biaya_delivery = 10000
+        keterangan_delivery = "Diantar ke rumah"
+    elif pilihan_delivery == 2:
+        biaya_delivery = 0
+        keterangan_delivery = "Ambil sendiri"
+    else:
+        biaya_delivery = 0
+        keterangan_delivery = "Pilihan delivery tidak tersedia"
+        print("[!] Mohon maaf, pilihan delivery salah.")
+
+    # Hitung total pembayaran akhir (Total setelah diskon + ongkir)
+    total_pembayaran_akhir = total_setelah_diskon + biaya_delivery
+
+else:
+    # Jika dari awal jasa tidak tersedia, set semua nilai jadi 0
+    diskon = 0
+    persen_diskon = "0%"
+    total_setelah_diskon = 0
+    biaya_delivery = 0
+    keterangan_delivery = "-"
+    total_pembayaran_akhir = 0
+    print("[!] Transaksi dibatalkan karena pilihan jasa tidak valid.")
