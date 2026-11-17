@@ -9,9 +9,9 @@ print("=" * 40)
 # ==========================================
 # BAGIAN 1: Input Data Pelanggan (Anggota 1)
 # ==========================================
-nama = input("Masukkan Nama          : ")
-no_telp = input("Masukkan No Telepon    : ")
-alamat = input("Masukkan Alamat        : ")
-email = input("Masukkan Email         : ")
+nama = str(input("Masukkan Nama          : "))
+no_telp = str(input("Masukkan No Telepon    : "))
+alamat = str(input("Masukkan Alamat        : "))
+email = str(input("Masukkan Email         : "))
 
 print("-" * 40)
