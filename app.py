@@ -12,6 +12,5 @@ print("=" * 40)
 nama = str(input("Masukkan Nama          : "))
 no_telp = str(input("Masukkan No Telepon    : "))
 alamat = str(input("Masukkan Alamat        : "))
-email = str(input("Masukkan Email         : "))
 
 print("-" * 40)
