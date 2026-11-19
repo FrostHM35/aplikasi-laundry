@@ -62,13 +62,13 @@ if subtotal > 0:
     
     # 1. Logika Pengecekan Diskon Bertingkat (Minimal)
     if subtotal >= 150000:
-        diskon = subtotal * 0.20
+        diskon = subtotal * 20/100
         persen_diskon = "20%"
     elif subtotal >= 100000:
-        diskon = subtotal * 0.15
+        diskon = subtotal * 15/100
         persen_diskon = "15%"
     elif subtotal >= 50000:
-        diskon = subtotal * 0.10
+        diskon = subtotal * 10/100
         persen_diskon = "10%"
     else:
         diskon = 0
