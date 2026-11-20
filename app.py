@@ -2,20 +2,25 @@
 # PROGRAM APLIKASI LAUNDRY 
 # ==========================================
 
+# ==========================================
+# BAGIAN 1: Input Data Pelanggan
+# ==========================================
+
 print("=" * 40)
-print("       SELAMAT DATANG DI LAUNDRY KITA")
+print("       SELAMAT DATANG DI LAUNDRY")
 print("=" * 40)
 
-# ==========================================
-# BAGIAN 1: Input Data Pelanggan (Anggota 1)
-# ==========================================
 nama = str(input("Masukkan Nama          : "))
 no_telp = str(input("Masukkan No Telepon    : "))
 alamat = str(input("Masukkan Alamat        : "))
 
 print("-" * 40)
 
-# === BAGIAN ANGGOTA 2: Pilihan Layanan, Input Berat, & Subtotal ===
+
+
+# ==========================================
+# BAGIAN 2: Pilihan Layanan, Input Berat, & Subtotal
+# ==========================================
 
 print("\n--- PILIHAN JENIS JASA ---")
 print("1. Cuci Kering  (Rp 5.000 / kg)")
@@ -52,15 +57,15 @@ else:
 
 
 
+
 # ==========================================
-# BAGIAN 3: Pengecekan Diskon & Pilihan Delivery (Anggota 3)
+# BAGIAN 3: Pengecekan Diskon & Pilihan Delivery 
 # ==========================================
 
-# Cek apakah subtotal bernilai lebih dari 0 (artinya pilihan jasa sebelumnya valid)
+# mengecek apakah subtotal bernilai lebih dari 0 (artinya pilihan jasa sebelumnya valid)
 if subtotal > 0:
     print("-" * 40)
     
-    # 1. Logika Pengecekan Diskon Bertingkat (Minimal)
     if subtotal >= 150000:
         diskon = subtotal * 20/100
         persen_diskon = "20%"
@@ -74,7 +79,7 @@ if subtotal > 0:
         diskon = 0
         persen_diskon = "0%"
 
-    # Tampilkan pesan jika mendapatkan diskon (> 0%)
+    # Tampilkan pesan jika mendapatkan diskon > 0%
     if diskon > 0:
         print("~" * 40)
         print(f"🎉 HOREE! ANDA MENDAPATKAN DISKON {persen_diskon}!")
@@ -120,6 +125,13 @@ else:
     total_pembayaran_akhir = 0
     print("[!] Transaksi dibatalkan karena pilihan jasa tidak valid.")
 
+
+
+# ==========================================
+# BAGIAN 4: CETAK STRUK PEMBAYARAN 
+# ==========================================
+
+print("\n")
 print("\n*・。.・゜✭・.・✫・゜・。.・*・。.・゜✭・*")
 print("           🫧  STRUK LAUNDRY 🫧             ")
 print("*・。.・゜✭・.・✫・゜・。.・*・。.・゜✭・*")
@@ -141,3 +153,4 @@ print("════════════════════════�
 print("               TERIMA KASIH            ")
 print("             ATAS PESANAN ANDA         ")
 print("*・。.・゜✭・.・✫・゜・。.・*・。.・゜✭・*")
+print("\n")
